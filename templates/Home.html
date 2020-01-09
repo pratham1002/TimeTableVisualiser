@@ -52,8 +52,10 @@
     <form action="AddSlot" method="POST">
         {% csrf_token %}
         {% for lecture in lectures %}
+            <label>
             <input type="radio" name="slot" value="{{lecture}}">
             {{lecture}}<br>
+            </label>
         {% endfor %}
         <br>
         <button type="submit" name="course_number" value="{{course_number}}">Submit</button>
@@ -65,8 +67,10 @@
     <form action="AddSlot" method="POST">
         {% csrf_token %}
         {% for tutorial in tutorials %}
+            <label>
             <input type="radio" name="slot" value="{{tutorial}}">
             {{tutorial}}<br>
+            </label>
         {% endfor %}
         <br>
         <button type="submit" name="course_number" value="{{course_number}}">Submit</button>
@@ -78,8 +82,10 @@
     <form action="AddSlot" method="POST">
         {% csrf_token %}
         {% for practical in practicals %}
+        <label>
         <input type="radio" name="slot" value="{{practical}}">
             {{practical}}<br>
+        </label>
         {% endfor %}
         <br>
         <button type="submit" name="course_number" value="{{course_number}}">Submit</button>
