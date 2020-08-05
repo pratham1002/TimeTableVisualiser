@@ -41,7 +41,7 @@ def CourseData(request):
     for day in userdays:
         userhours = userhours | Hour.objects.filter(day=day.id).order_by('id')
 
-    loc=("II-Sem-2019_20_05_01_2020-converted (1).xlsx")
+    loc=("timetable.xlsx")
     wb=xlrd.open_workbook(loc)
     sheet=wb.sheet_by_index(0)
 
@@ -54,7 +54,7 @@ def CourseData(request):
 
     for i in range(sheet.nrows):
 
-        if sheet.cell_value(i,1) == course_number :
+        if sheet.cell_value(i,1).lower() == course_number.lower() :
             
             for j in range(sheet.nrows):
 
